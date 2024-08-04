@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Coustumtext extends StatelessWidget {
    Coustumtext({super.key,this.textsize,this.text,this.textcolor});
@@ -41,7 +42,8 @@ class CoustmAppbar extends StatelessWidget {
 
 
 class Cards extends StatelessWidget {
-   const Cards({super.key,});
+    Cards({super.key,this.cardcolor});
+   Color?cardcolor;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -50,7 +52,7 @@ class Cards extends StatelessWidget {
         padding: const EdgeInsets.only(top: 24,bottom: 24,left: 16),
         decoration:  BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: const Color(0xff466CFF)
+        color: cardcolor,
         ),
         child:  Column(
           children: [
@@ -89,5 +91,18 @@ class Coustmicons extends StatelessWidget {
       ),
       child: Center(child:IconButton(onPressed: (){},icon:const Icon(Icons.search))),
     );
+  }
+}
+
+class Listofdays extends StatelessWidget {
+  const Listofdays({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+         Cards(cardcolor:const Color(0xff466CFF),)
+      ],
+      );
   }
 }

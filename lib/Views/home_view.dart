@@ -1,5 +1,7 @@
 import 'package:daily_math/Componants/widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class Homeview extends StatelessWidget {
   const Homeview({super.key});
@@ -8,14 +10,15 @@ class Homeview extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(
+        padding:  EdgeInsets.symmetric(
         horizontal: 24,
         vertical: 24
         ),
         child: Column(
           children: [
-            CoustmAppbar(),
-            Cards()
+          CoustmAppbar(),
+          Expanded(child: Listofdays()),
+            
           ],
         ),
       ),
