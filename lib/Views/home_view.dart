@@ -8,10 +8,14 @@ class Homeview extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24),
+        padding: EdgeInsets.symmetric(
+        horizontal: 24,
+        vertical: 24
+        ),
         child: Column(
           children: [
-            CoustmAppbar()
+            CoustmAppbar(),
+            Cards()
           ],
         ),
       ),

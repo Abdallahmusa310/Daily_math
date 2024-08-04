@@ -3,18 +3,17 @@
 import 'package:flutter/material.dart';
 
 class Coustumtext extends StatelessWidget {
-   Coustumtext({super.key,this.textsize,this.text});
+   Coustumtext({super.key,this.textsize,this.text,this.textcolor});
   double? textsize;
   String? text;
-
-
+  Color? textcolor;
   @override
   Widget build(BuildContext context) {
     return Text('$text',
     style: TextStyle(
       fontSize: textsize,
       fontFamily: 'laywriteDEGrund',
-      color: Colors.white,
+      color: textcolor
     ),
     );
       
@@ -38,14 +37,44 @@ class CoustmAppbar extends StatelessWidget {
       );
   }
 }
-class Cards extends StatelessWidget {
-  const Cards({super.key});
 
+
+
+class Cards extends StatelessWidget {
+   const Cards({super.key,});
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Padding(
+      padding: const EdgeInsets.all(24),
+      child: Container(
+        padding: const EdgeInsets.only(top: 24,bottom: 24,left: 16),
+        decoration:  BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: const Color(0xff466CFF)
+        ),
+        child:  Column(
+          children: [
+            ListTile(
+              title:Coustumtext(
+                text: 'Saturday',
+                textcolor: Colors.black,
+                textsize: 25,
+              ),
+              trailing: IconButton(onPressed: (){},
+              icon:const Icon(
+              color: Colors.black, Icons.add
+              )),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
+
+
+
+
 class Coustmicons extends StatelessWidget {
   const Coustmicons({super.key});
 
@@ -58,7 +87,7 @@ class Coustmicons extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         color: Colors.white.withOpacity(0.1)
       ),
-      child: const Center(child:Icon(Icons.search)),
+      child: Center(child:IconButton(onPressed: (){},icon:const Icon(Icons.search))),
     );
   }
 }
