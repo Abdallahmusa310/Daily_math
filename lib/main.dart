@@ -1,3 +1,4 @@
+import 'package:daily_math/Views/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +13,9 @@ class Dailymath extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner:false,
       theme: ThemeData.dark(),
-      home: const Scaffold() ,
+      home: const Homeview()
+        
+   
     );
   }
 }
