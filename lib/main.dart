@@ -1,3 +1,4 @@
+import 'package:daily_math/Views/groub_day.dart';
 import 'package:daily_math/Views/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -13,9 +14,11 @@ class Dailymath extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner:false,
       theme: ThemeData.dark(),
-      home: const Homeview()
-        
-   
+      routes:{
+      'Homeview':(context) => const Homeview(),
+      'Groubday':(context) => const Groubday()
+      },
+      initialRoute: 'Homeview',
     );
   }
 }

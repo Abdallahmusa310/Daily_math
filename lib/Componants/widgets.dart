@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Coustumtext extends StatelessWidget {
    Coustumtext({super.key,this.textsize,this.text,this.textcolor});
@@ -13,7 +12,7 @@ class Coustumtext extends StatelessWidget {
     return Text('$text',
     style: TextStyle(
       fontSize: textsize,
-      fontFamily: 'laywriteDEGrund',
+      fontFamily: 'Roboto',
       color: textcolor
     ),
     );
@@ -42,8 +41,9 @@ class CoustmAppbar extends StatelessWidget {
 
 
 class Cards extends StatelessWidget {
-    Cards({super.key,this.cardcolor});
+    Cards({super.key,this.cardcolor,this.dayname});
    Color?cardcolor;
+   String? dayname;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -58,8 +58,8 @@ class Cards extends StatelessWidget {
           children: [
             ListTile(
               title:Coustumtext(
-                text: 'Saturday',
-                textcolor: Colors.black,
+                text: dayname,
+                textcolor: Colors.white,
                 textsize: 25,
               ),
               trailing: IconButton(onPressed: (){},
@@ -99,9 +99,30 @@ class Listofdays extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
+    return  ListView(
+      physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
       children: [
-         Cards(cardcolor:const Color(0xff466CFF),)
+         Cards(cardcolor:const Color(0xff466CFF),
+         dayname: 'Saturday',
+         ),
+         Cards(cardcolor:const Color(0xff7864F9),
+         dayname:'Friday' ,
+         ),
+         Cards(cardcolor:const Color(0xffec7063),
+         dayname: 'Sunday',
+         ),
+         Cards(cardcolor:const Color(0xff58d68d),
+         dayname: 'Monday',
+         ),
+         Cards(cardcolor:const Color(0xffdc7633),
+         dayname: 'Tuesday',
+         ),
+         Cards(cardcolor:const Color(0xffaab7b8),
+         dayname: 'Wednesday',
+         ),
+         Cards(cardcolor:const Color(0xfff4d03f ),
+         dayname: 'thursday',
+         ),         
       ],
       );
   }
