@@ -15,7 +15,8 @@ class Homeview extends StatelessWidget {
               });
             },
             child: const Icon(Icons.add,color: Colors.purple,),
-            )
+            ),
+            body: const Column() ,
 
     );
   }

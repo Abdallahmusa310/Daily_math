@@ -1,4 +1,5 @@
 
+import 'package:daily_math/Componants/coustntextfield.dart';
 import 'package:flutter/material.dart';
 
 class Addgroubsheet extends StatelessWidget {
@@ -6,6 +7,16 @@ class Addgroubsheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container();
+    return  Padding(
+      padding:const EdgeInsets.all(32),
+      child:  Column(
+        children: [
+        const  SizedBox(height: 32,),
+          Coustmtextfield(hintText: 'Group name',maxsize: 1,),
+          const SizedBox(height: 32,),
+          Coustmtextfield(hintText: 'Group mempers',maxsize:5 ,)
+        ],
+      ),
+    );
   }
 }

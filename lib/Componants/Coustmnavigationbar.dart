@@ -33,11 +33,11 @@ class _NavbarState extends State<Navbar> {
           items:
        const  [  
             Icon(Icons.settings,
-            color: Colors.purple),
+            color: Color.fromARGB(255, 53, 39, 176)),
             Icon(Icons.home,
-            color: Colors.purple),
+            color: Color.fromARGB(255, 53, 39, 176)),
             Icon(Icons.menu,
-            color: Colors.purple)
+            color: Color.fromARGB(255,53, 39, 176))
            ],
            onTap: (i){
             setState((){

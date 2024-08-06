@@ -1,6 +1,13 @@
 import 'package:daily_math/Componants/Coustmnavigationbar.dart';
+import 'package:daily_math/Views/Friday.dart';
+import 'package:daily_math/Views/Saturdayview.dart';
 import 'package:daily_math/Views/Setting.dart';
+import 'package:daily_math/Views/Thursday.dart';
+import 'package:daily_math/Views/Tuesday.dart';
+import 'package:daily_math/Views/Wednesday.dart';
 import 'package:daily_math/Views/daysmenuview.dart';
+import 'package:daily_math/Views/monday.dart';
+import 'package:daily_math/Views/sunday.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,7 +26,14 @@ class Dailymath extends StatelessWidget {
       'Homeview'   :(context) => const Daysmenu(),
       'Groubday'   :(context) => const Daysmenu(),
       'Settingview':(context) => const Settingview(),
-      'Navbar'     :(context) => const  Navbar()
+      'Navbar'     :(context) => const  Navbar(),
+      'Saturday'   :(context) => const Saturday(),
+      'Friday'     :(context) => const Friday(),
+      'Sunday'     :(context) => const Sunday(),
+      'Monday'     :(context) => const Monday(),
+      'Tuesday'    :(context) => const Tuesday(),
+      'Wednesday'    :(context) => const Wednesday(),
+      'Thursday'    :(context) => const Thursday(),
       },
       initialRoute: 'Navbar',
     );
