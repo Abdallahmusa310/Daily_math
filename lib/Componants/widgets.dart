@@ -20,110 +20,55 @@ class Coustumtext extends StatelessWidget {
   
   }
 }
-class CoustmAppbar extends StatelessWidget {
-  const CoustmAppbar({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-        children: [
-          Coustumtext(
-            text:'Week Days',
-            textsize: 25,
-          ),
-          const Spacer(flex: 1,),
-          const Coustmicons()
 
-        ],
-      );
-  }
-}
-
-
-
-class Cards extends StatelessWidget {
-    Cards({super.key,this.cardcolor,this.dayname});
-   Color?cardcolor;
-   String? dayname;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(24),
-      child: Container(
-        padding: const EdgeInsets.only(top: 24,bottom: 24,left: 16),
-        decoration:  BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        color: cardcolor,
-        ),
-        child:  Column(
-          children: [
-            ListTile(
-              title:Coustumtext(
-                text: dayname,
-                textcolor: Colors.white,
-                textsize: 25,
-              ),
-              trailing: IconButton(onPressed: (){},
-              icon:const Icon(
-              color: Colors.black, Icons.add
-              )),
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
-
-
-class Coustmicons extends StatelessWidget {
-  const Coustmicons({super.key});
+class Addtext extends StatelessWidget {
+  const Addtext({super.key});
 
   @override
   Widget build(BuildContext context) {
     return  Container(
-      width: 40,
-      height: 40,
-      decoration:  BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
-        color: Colors.white.withOpacity(0.1)
+      height: 30,
+      width: 90,
+      decoration: BoxDecoration(
+        boxShadow:const [
+          BoxShadow(
+            spreadRadius: -10,
+            offset: Offset(20, 0),
+            blurRadius: 20,
+            color: Color(0xffa963d7)
+          )
+
+        ],
+        borderRadius: BorderRadius.circular(8),
+        gradient:
+        const LinearGradient(colors:
+         [
+          Color(0xff407bff),
+          Color(0xff9467dd)
+         ]
+         )
+         
+        
       ),
-      child: Center(child:IconButton(onPressed: (){},icon:const Icon(Icons.search))),
+      child:
+      Center(
+        child: Coustumtext(
+        text: 'Add Group',
+        textcolor: Colors.white,
+        textsize: 15,
+        ),
+      ),      
     );
   }
 }
 
-class Listofdays extends StatelessWidget {
-  const Listofdays({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return  ListView(
-      physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
-      children: [
-         Cards(cardcolor:const Color(0xff466CFF),
-         dayname: 'Saturday',
-         ),
-         Cards(cardcolor:const Color(0xff7864F9),
-         dayname:'Friday' ,
-         ),
-         Cards(cardcolor:const Color(0xffec7063),
-         dayname: 'Sunday',
-         ),
-         Cards(cardcolor:const Color(0xff58d68d),
-         dayname: 'Monday',
-         ),
-         Cards(cardcolor:const Color(0xffdc7633),
-         dayname: 'Tuesday',
-         ),
-         Cards(cardcolor:const Color(0xffaab7b8),
-         dayname: 'Wednesday',
-         ),
-         Cards(cardcolor:const Color(0xfff4d03f ),
-         dayname: 'thursday',
-         ),         
-      ],
-      );
-  }
-}
+
+
+
+
+
+
+
+
+

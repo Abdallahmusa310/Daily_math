@@ -1,5 +1,6 @@
-import 'package:daily_math/Views/groub_day.dart';
-import 'package:daily_math/Views/home_view.dart';
+import 'package:daily_math/Componants/Coustmnavigationbar.dart';
+import 'package:daily_math/Views/Setting.dart';
+import 'package:daily_math/Views/daysmenuview.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,12 +14,14 @@ class Dailymath extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       debugShowCheckedModeBanner:false,
-      theme: ThemeData.dark(),
+      theme: ThemeData.light(),
       routes:{
-      'Homeview':(context) => const Homeview(),
-      'Groubday':(context) => const Groubday()
+      'Homeview'   :(context) => const Daysmenu(),
+      'Groubday'   :(context) => const Daysmenu(),
+      'Settingview':(context) => const Settingview(),
+      'Navbar'     :(context) => const  Navbar()
       },
-      initialRoute: 'Homeview',
+      initialRoute: 'Navbar',
     );
   }
 }
