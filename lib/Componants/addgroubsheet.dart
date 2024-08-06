@@ -14,7 +14,7 @@ class Addgroubsheet extends StatelessWidget {
         const  SizedBox(height: 32,),
           Coustmtextfield(hintText: 'Group name',maxsize: 1,),
           const SizedBox(height: 32,),
-          Coustmtextfield(hintText: 'Group mempers',maxsize:5 ,)
+          Coustmtextfield(hintText: 'Group mempers',maxsize:5 ,),
         ],
       ),
     );

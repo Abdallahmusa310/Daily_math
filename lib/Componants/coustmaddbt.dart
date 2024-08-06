@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 class Addtext extends StatelessWidget {
    Addtext({super.key, this.routname});
   String?routname;
-
   @override
   Widget build(BuildContext context) {
     return  Container(
-      height: 30,
-      width: 40,
+      height: 40,
+      width: 60,
       decoration: BoxDecoration(
         boxShadow:const [
           BoxShadow(
