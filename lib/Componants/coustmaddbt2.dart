@@ -1,9 +1,10 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:daily_math/Componants/addgroupsheet2.dart';
 import 'package:flutter/material.dart';
 
-class Addtext extends StatelessWidget {
-   Addtext({super.key, required this.routname});
+class Newaddbt extends StatelessWidget {
+   Newaddbt({super.key,});
   String?routname;
   @override
   Widget build(BuildContext context) {
@@ -33,9 +34,16 @@ class Addtext extends StatelessWidget {
       ),
       child:
       Center(child: IconButton(onPressed:
-       (){Navigator.pushNamed(context, '$routname');}
+       (){   
+        showModalBottomSheet(context: context, builder: (context){
+                return const Newaddgroubsheet();}) ;
+       
+        
+       }
        , icon: const Icon(Icons.add,color: Colors.white,))),
     );    
   
   }
 }
+
+ 

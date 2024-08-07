@@ -1,16 +1,18 @@
-import 'package:daily_math/Componants/coustmaddbt.dart';
+
+import 'package:daily_math/Componants/coustmaddbt2.dart';
 import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
-class Cards extends StatelessWidget {
-    Cards({super.key,required this.cardcolorborder,this.dayname,this.groubsnum,this.rootname,this.numperofgroups,this.text});
+class Newcards extends StatelessWidget {
+    Newcards({super.key,required this.cardcolorborder,required this.cardcolorborder2,this.dayname,this.groubsnum,this.rootname,this.numperofgroups,this.to,this.from});
    String?rootname;
    Color  cardcolorborder;
+   Color  cardcolorborder2;
    String? dayname;
    String? groubsnum;
    int? numperofgroups;
-   String?text;
+   String?to,from;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -31,11 +33,13 @@ class Cards extends StatelessWidget {
                 textcolor: Colors.black,
                 textsize: 25,
               ),
-              subtitle:Text(
-                 '$numperofgroups groups') ,
-              trailing: Addtext(
-                routname: '$rootname',
-              ) ,
+              subtitle:const Column(
+                children: [
+                  Text('from'),
+                  Text('to')
+                ],
+              ),
+              trailing: Newaddbt()
             )
           ],
         ),
@@ -43,5 +47,3 @@ class Cards extends StatelessWidget {
     );
   }
 }
-
-

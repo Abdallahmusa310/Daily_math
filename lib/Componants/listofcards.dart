@@ -25,6 +25,7 @@ class Listofdays extends StatelessWidget {
          Cards(cardcolorborder: const Color(0xff466CFF),
          dayname: 'Monday',
          rootname: 'Monday',
+         text: 'Groups',
          ),
          Cards(cardcolorborder:const Color(0xffdc7633),
          dayname: 'Tuesday',

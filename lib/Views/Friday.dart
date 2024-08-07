@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
-
 import 'package:daily_math/Componants/addgroubsheet.dart';
+import 'package:daily_math/Componants/newcoustmcard.dart';
 import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +13,7 @@ class Friday extends StatelessWidget {
         floatingActionButton: FloatingActionButton(
             onPressed: (){
               showModalBottomSheet(context: context, builder: (context){
-                return const Addgroubsheet();
+                return const   Addgroubsheet();
               });
             },
             child: const Icon(Icons.add,color: Colors.purple,),
@@ -31,7 +31,13 @@ class Friday extends StatelessWidget {
                         textsize: 25,
                       ),
                     ],
+                  ),
+                  Newcards(
+                    cardcolorborder: const Color.fromARGB(255, 123, 30, 139),
+                    cardcolorborder2:  const Color.fromARGB(255, 25, 37, 212),
                   )
+    
+
                   ],
               ),
             ) ,

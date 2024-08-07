@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:daily_math/Componants/addgroubsheet.dart';
+import 'package:daily_math/Componants/coustmcard.dart';
 import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -37,7 +38,9 @@ class Saturday extends StatelessWidget {
                           textsize: 25,
                         ),
                       ],
-                    )
+                    ),
+                   Cards(cardcolorborder:Colors.purple),
+
                     
                 ],
               ),

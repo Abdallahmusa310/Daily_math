@@ -3,8 +3,8 @@ import 'package:daily_math/Componants/addcontainer.dart';
 import 'package:daily_math/Componants/coustntextfield.dart';
 import 'package:flutter/material.dart';
 
-class Addgroubsheet extends StatelessWidget {
-  const Addgroubsheet({super.key});
+class Newaddgroubsheet extends StatelessWidget {
+  const Newaddgroubsheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,13 +15,9 @@ class Addgroubsheet extends StatelessWidget {
         child: Column(
           children: [
           const  SizedBox(height: 32,),
-            Coustmtextfield(hintText: 'Group name',maxsize: 1,),
+            Coustmtextfield(hintText: 'Student Name',maxsize: 1,),
             const SizedBox(height: 32,),
-            Coustmtextfield(hintText: 'to',maxsize: 1,),
-            const SizedBox(height: 32,),
-            Coustmtextfield(hintText: 'from',maxsize: 1,),
-            const SizedBox(height: 32,),
-            Addbt(bttext: 'Create Group'),
+            Addbt(bttext: 'Add Student'),
             
 
 
