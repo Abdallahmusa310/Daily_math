@@ -1,14 +1,12 @@
-
 import 'package:daily_math/Componants/coustmaddbt2.dart';
 import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class Newcards extends StatelessWidget {
-    Newcards({super.key,required this.cardcolorborder,required this.cardcolorborder2,this.dayname,this.groubsnum,this.rootname,this.numperofgroups,this.to,this.from});
+    Newcards({super.key,required this.colorborder,this.dayname,this.groubsnum,this.rootname,this.numperofgroups,this.to,this.from});
    String?rootname;
-   Color  cardcolorborder;
-   Color  cardcolorborder2;
+   Color  colorborder;
    String? dayname;
    String? groubsnum;
    int? numperofgroups;
@@ -21,8 +19,8 @@ class Newcards extends StatelessWidget {
         padding: const EdgeInsets.only(top: 24,bottom: 24,left: 16),
         decoration: BoxDecoration(
          border:  BorderDirectional(
-          bottom:BorderSide(width: 2,color: cardcolorborder),
-          end: BorderSide(width: 0.5,color: cardcolorborder) ),
+          bottom:BorderSide(width: 2,color:colorborder),
+          end: BorderSide(width: 0.5,color: colorborder) ),
         borderRadius: BorderRadius.circular(16),
         ),
         child:  Column(
@@ -36,7 +34,8 @@ class Newcards extends StatelessWidget {
               subtitle:const Column(
                 children: [
                   Text('from'),
-                  Text('to')
+                  Text('to'),
+                  Text('grade')
                 ],
               ),
               trailing: Newaddbt()

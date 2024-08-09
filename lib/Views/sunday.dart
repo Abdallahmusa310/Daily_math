@@ -1,7 +1,6 @@
-// ignore_for_file: file_names
 
-import 'package:daily_math/Componants/addgroubsheet.dart';
-import 'package:daily_math/Componants/coustmcard.dart';
+import 'package:daily_math/Componants/coustmelvatebbt.dart';
+import 'package:daily_math/Componants/newcoustmcard.dart';
 import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -11,15 +10,7 @@ class Sunday extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        floatingActionButton: FloatingActionButton(
-            onPressed: (){
-              showModalBottomSheet(context: context, builder: (context){
-                return const Addgroubsheet();
-
-              });
-            },
-            child: const Icon(Icons.add,color: Colors.purple,),
-            ),
+        floatingActionButton: const Elvatedbt(),
             body: Padding(
               padding: const EdgeInsets.only(
        top: 60,
@@ -34,13 +25,16 @@ class Sunday extends StatelessWidget {
                         IconButton(onPressed: (){Navigator.pop(context);}, icon:const Icon(Icons.exit_to_app)),
                         Coustumtext(
                           text: 'Sunday',
-                          textcolor: Colors.purple,
+                          textcolor: Colors.black,
                           textsize: 25,
                         ),
                       ],
 
                   ),
-                Cards(cardcolorborder:Colors.purple),
+                  Newcards(
+                    colorborder: const Color.fromARGB(255, 18, 53, 167),
+
+                  )
   
                 ],
 

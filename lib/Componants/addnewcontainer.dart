@@ -1,14 +1,12 @@
-// ignore_for_file: must_be_immutable
-
-import 'package:daily_math/Componants/newaddgroupsheet.dart';
+import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
-class Newaddbt extends StatelessWidget {
-   Newaddbt({super.key,});
-  String?routname;
+class Newcontainer extends StatelessWidget {
+  const Newcontainer({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return  Container(
+    return Container(
       height: 40,
       width: 60,
       decoration: BoxDecoration(
@@ -31,18 +29,8 @@ class Newaddbt extends StatelessWidget {
          
         
       ),
-      child:
-      Center(child: IconButton(onPressed:
-       (){   
-        showModalBottomSheet(context: context, builder: (context){
-                return const Newaddgroubsheet();}) ;
-       
-        
-       }
-       , icon: const Icon(Icons.add,color: Colors.white,))),
-    );    
-  
+      child: Center(child: Coustumtext(text: 'Add Student',)),
+    );
+
   }
 }
-
- 

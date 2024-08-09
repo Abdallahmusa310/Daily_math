@@ -9,9 +9,8 @@ class Listofgroups extends StatelessWidget {
     return ListView.builder(
       itemBuilder:(context,index){
         return Newcards(
-                        cardcolorborder: const Color.fromARGB(255, 123, 30, 139),
-                    cardcolorborder2: const Color.fromARGB(255, 25, 37, 212),
-          
+          colorborder: const Color.fromARGB(255, 18, 53, 167),
+
         );
       }
       );

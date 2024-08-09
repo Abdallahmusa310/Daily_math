@@ -16,12 +16,11 @@ class Addbt extends StatelessWidget {
         width: 110,
         decoration: BoxDecoration(
           boxShadow:const [
-            BoxShadow(
-              spreadRadius: -10,
-              offset: Offset(20, 0),
+             BoxShadow(
+               spreadRadius: -10,
               blurRadius: 28,
               color: Color(0xffa963d7)
-            )
+             )
       
           ],
           borderRadius: BorderRadius.circular(8),

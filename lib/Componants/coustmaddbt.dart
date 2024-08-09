@@ -14,7 +14,6 @@ class Addtext extends StatelessWidget {
         boxShadow:const [
           BoxShadow(
             spreadRadius: -10,
-            offset: Offset(20, 0),
             blurRadius: 20,
             color: Color(0xffa963d7)
           )
