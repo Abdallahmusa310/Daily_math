@@ -9,7 +9,6 @@ class Coustmtextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return  TextField(
       controller: studentgradee,
-      maxLines: maxsize,
       decoration: InputDecoration(
         hintText: '$hintText',
         border: buildborder(),
@@ -17,7 +16,6 @@ class Coustmtextfield extends StatelessWidget {
       ),
     );
   }
-
   OutlineInputBorder buildborder() {
     return OutlineInputBorder(
       
@@ -25,7 +23,6 @@ class Coustmtextfield extends StatelessWidget {
         borderSide: const BorderSide(
           color: Color.fromARGB(255, 72, 33, 243)
         )
-        
       );
   }
 }

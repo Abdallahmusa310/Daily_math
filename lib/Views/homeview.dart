@@ -1,4 +1,5 @@
-import 'package:daily_math/Componants/addgroubsheet.dart';
+import 'package:daily_math/Componants/Appbar.dart';
+import 'package:daily_math/Componants/listofcards.dart';
 import 'package:flutter/material.dart';
 
 class Homeview extends StatelessWidget {
@@ -6,17 +7,22 @@ class Homeview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-            floatingActionButton: FloatingActionButton(
-            onPressed: (){
-              showModalBottomSheet(context: context, builder: (context){
-                return const Addgroubsheet();
-              });
-            },
-            child: const Icon(Icons.add,color: Colors.purple,),
-            ),
-            body: const Column() ,
+    return const Scaffold(
+       body:  Padding(
+        padding:EdgeInsets.only(
+        top: 60,
+        right: 14,
+        left: 14
+        ),
+        child: Column(
+          children: [
+          CoustmAppbar(),
+          Expanded(child: Listofdays()),
+          ],
+        ),
+      ),
 
+           
     );
   }
 }

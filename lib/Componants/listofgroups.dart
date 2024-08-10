@@ -10,7 +10,6 @@ class Listofgroups extends StatelessWidget {
       itemBuilder:(context,index){
         return Newcards(
           colorborder: const Color.fromARGB(255, 18, 53, 167),
-
         );
       }
       );

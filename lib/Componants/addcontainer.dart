@@ -4,8 +4,9 @@ import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
 class Addbt extends StatelessWidget {
-   Addbt({super.key,this.bttext});
+   Addbt({super.key,this.bttext,this.textsize});
   String?bttext;
+  double? textsize;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +36,7 @@ class Addbt extends StatelessWidget {
            
           
         ),
-        child:  Center(child: Coustumtext(text: '$bttext',textcolor: Colors.white,textsize: 16,))
+        child:  Center(child: Coustumtext(text: '$bttext',textcolor: Colors.white,textsize: textsize,))
       ),
     );
   }

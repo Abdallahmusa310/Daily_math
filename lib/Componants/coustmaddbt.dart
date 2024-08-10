@@ -9,7 +9,7 @@ class Addtext extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Container(
       height: 40,
-      width: 60,
+      width: 50,
       decoration: BoxDecoration(
         boxShadow:const [
           BoxShadow(
@@ -33,7 +33,7 @@ class Addtext extends StatelessWidget {
       child:
       Center(child: IconButton(onPressed:
        (){Navigator.pushNamed(context, '$routname');}
-       , icon: const Icon(Icons.add,color: Colors.white,))),
+       , icon: const Icon(Icons.calendar_month,color: Colors.white,))),
     );    
   
   }

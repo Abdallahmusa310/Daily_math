@@ -10,31 +10,38 @@ class Friday extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(  
-      floatingActionButton:const Elvatedbt(),
+      floatingActionButton: const Elvatedbt(),
             body: Padding(
-              padding: const EdgeInsets.only(top: 60,  right: 14, left: 14 ),
+              padding: const EdgeInsets.all(16),
               child: Column(
-                children: [
-                  Row(
-                    children: [
-                    IconButton(onPressed: (){Navigator.pop(context);}, icon:const Icon(Icons.exit_to_app)),
-                      Coustumtext(
-                        text: 'Friday',
-                        textcolor: Colors.black,
-                        textsize: 25,
-                      ),
+                  children: [
+                    Row(
+                      children: [
+                      IconButton(onPressed: (){Navigator.pop(context);}, icon:const Icon(Icons.exit_to_app)),
+                        Coustumtext(
+                          text: 'Friday',
+                          textcolor: Colors.black,
+                          textsize: 25,
+                        ),
+                      ],
+                    ),
+                    Newcards(
+                      colorborder: const Color.fromARGB(255, 18, 53, 167),
+                    ),
+              
+                  
+              
                     ],
-                  ),
-                  Newcards(
-                    colorborder: const Color.fromARGB(255, 18, 53, 167),
+                ),
+            ),
+            );
 
-                  )
     
-
-                  ],
-              ),
-            ) ,
-
-    );
   }
 }
+
+
+
+//  floatingActionButton:const Elvatedbt(),
+//             body: Padding(
+//               padding: const EdgeInsets.only(top: 60,  right: 14, left: 14 ),

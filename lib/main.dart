@@ -6,6 +6,7 @@ import 'package:daily_math/Views/Thursday.dart';
 import 'package:daily_math/Views/Tuesday.dart';
 import 'package:daily_math/Views/Wednesday.dart';
 import 'package:daily_math/Views/daysmenuview.dart';
+import 'package:daily_math/Views/homeview.dart';
 import 'package:daily_math/Views/monday.dart';
 import 'package:daily_math/Views/sunday.dart';
 import 'package:flutter/material.dart';
@@ -23,7 +24,7 @@ class Dailymath extends StatelessWidget {
       debugShowCheckedModeBanner:false,
       theme: ThemeData.light(),
       routes:{
-      'Homeview'   :(context) => const Daysmenu(),
+      'Homeview'   :(context) => const Homeview(),
       'Groubday'   :(context) => const Daysmenu(),
       'Settingview':(context) => const Settingview(),
       'Navbar'     :(context) => const  Navbar(),
@@ -32,8 +33,8 @@ class Dailymath extends StatelessWidget {
       'Sunday'     :(context) => const Sunday(),
       'Monday'     :(context) => const Monday(),
       'Tuesday'    :(context) => const Tuesday(),
-      'Wednesday'    :(context) => const Wednesday(),
-      'Thursday'    :(context) => const Thursday(),
+      'Wednesday'  :(context) => const Wednesday(),
+      'Thursday'   :(context) => const Thursday(),
       },
       initialRoute: 'Navbar',
     );

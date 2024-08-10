@@ -1,3 +1,4 @@
+import 'package:daily_math/Componants/addcontainer.dart';
 import 'package:daily_math/Componants/addgroubsheet.dart';
 import 'package:flutter/material.dart';
 
@@ -6,18 +7,33 @@ class Elvatedbt extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-         FloatingActionButton(          
-          foregroundColor: Colors.black,
-          hoverColor: Colors.black,
-          backgroundColor: const
-          Color.fromARGB(255, 221, 221, 221),
-            onPressed: (){
-              showModalBottomSheet(context: context, builder: (context){
-                return const Addgroubsheet();
-              });
-            },
-            child: const Icon(Icons.add,color: Color.fromARGB(255, 53, 39, 176)),
-            );
+    return GestureDetector
+    (
+        child: Addbt(textsize: 14,bttext: 'Create group',),
+
+      onTap:(){
+        showModalBottomSheet(context: context, builder: (context){
+           return const Addgroubsheet();
+      } ,
+      );
+      }
+      
+      
+    );
+    
+    
+  
   }
 }
+        //  FloatingActionButton(          
+        //   foregroundColor: Colors.black,
+        //   hoverColor: Colors.black,
+        //   backgroundColor: const
+        //   Color.fromARGB(255, 221, 221, 221),
+        //     onPressed: (){
+        //       showModalBottomSheet(context: context, builder: (context){
+        //         return const Addgroubsheet();
+        //       });
+        //     },
+        //     child: const Icon(Icons.add,color: Color.fromARGB(255, 53, 39, 176)),
+        //     );

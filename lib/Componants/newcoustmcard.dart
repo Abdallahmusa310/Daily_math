@@ -1,10 +1,13 @@
 import 'package:daily_math/Componants/coustmaddbt2.dart';
+import 'package:daily_math/Componants/newaddgroupsheet.dart';
 import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class Newcards extends StatelessWidget {
-    Newcards({super.key,required this.colorborder,this.dayname,this.groubsnum,this.rootname,this.numperofgroups,this.to,this.from});
+  Newcards({
+  super.key,required this.colorborder,this.dayname,this.groubsnum,
+  this.rootname,this.numperofgroups,this.to,this.from});
    String?rootname;
    Color  colorborder;
    String? dayname;
@@ -23,24 +26,28 @@ class Newcards extends StatelessWidget {
           end: BorderSide(width: 0.5,color: colorborder) ),
         borderRadius: BorderRadius.circular(16),
         ),
-        child:  Column(
-          children: [
-            ListTile(
-              title:Coustumtext(
-                text: dayname,
-                textcolor: Colors.black,
-                textsize: 25,
-              ),
-              subtitle:const Column(
-                children: [
-                  Text('from'),
-                  Text('to'),
-                  Text('grade')
-                ],
-              ),
-              trailing: Newaddbt()
-            )
-          ],
+        child: GestureDetector(
+          onTap: (){
+            showModalBottomSheet(context: context, builder: (context){
+            return const Newaddgroubsheet();});},
+          child: Column(
+            children: [
+              ListTile(
+                title:Coustumtext(
+                  text: dayname,
+                  textcolor: Colors.black,
+                  textsize: 25,
+                ),
+                subtitle:const Column(
+                  children: [
+                    Text('Start At'),
+                    Text('grade')
+                  ],
+                ),
+                trailing: Newaddbt()
+              )
+            ],
+          ),
         ),
       ),
     );
