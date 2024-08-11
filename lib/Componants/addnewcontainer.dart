@@ -8,7 +8,7 @@ class Newcontainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 40,
-      width: 60,
+      width: 90,
       decoration: BoxDecoration(
         boxShadow:const [
           BoxShadow(
@@ -29,7 +29,7 @@ class Newcontainer extends StatelessWidget {
          
         
       ),
-      child: Center(child: Coustumtext(text: 'Add Student',)),
+      child: Center(child: Coustumtext(text: 'Add Student', textcolor:Colors.white,textsize: 14 ,)),
     );
 
   }

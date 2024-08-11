@@ -11,17 +11,15 @@ class Newfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
-        hintText: '$hinttext',
+        labelText: hinttext,
         border: buildborder(),
         enabledBorder: buildborder()
       ),
     );
   }
   OutlineInputBorder buildborder() {
-    return OutlineInputBorder(
-      
-        borderRadius: BorderRadius.circular(16),
-        borderSide: const BorderSide(
+    return const OutlineInputBorder(
+            borderSide:  BorderSide(
           color: Color.fromARGB(255, 72, 33, 243)
         )
         
