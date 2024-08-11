@@ -4,39 +4,47 @@ import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
 class Addbt extends StatelessWidget {
-   Addbt({super.key,this.bttext,this.textsize});
+   Addbt({super.key,this.bttext,this.textsize,this.ontab,this.height,wiidth});
   String?bttext;
-  double? textsize;
+  double? textsize,width,height;
+  void Function()?ontab;
+  
 
   @override
   Widget build(BuildContext context) {
     return  Padding(
       padding: const EdgeInsets.only(bottom: 16),
-      child:  Container(
-        height: 40,
-        width: 110,
-        decoration: BoxDecoration(
-          boxShadow:const [
-             BoxShadow(
-               spreadRadius: -10,
-              blurRadius: 28,
-              color: Color(0xffa963d7)
-             )
-      
-          ],
-          borderRadius: BorderRadius.circular(8),
-          gradient:
-          const LinearGradient(colors:
-           [
-            Color(0xff407bff),
-            Color(0xff9467dd)
-           ]
-           )
+      child:  GestureDetector(
+        onTap: ontab,
+        child: Container(
+          height: 40,
+          width: 110,
+          decoration: BoxDecoration(
+            boxShadow:const [
+               BoxShadow(
+                 spreadRadius: -10,
+                blurRadius: 28,
+                color: Color(0xffa963d7)
+               )
         
-           
+            ],
+            borderRadius: BorderRadius.circular(8),
+            gradient:
+            const LinearGradient(colors:
+             [
+              Color(0xff407bff),
+              Color(0xff9467dd)
+             ]
+             )
           
+             
+            
+          ),
+          child: Center(child: 
+          Coustumtext(text: '$bttext',textcolor: Colors.white,textsize: textsize,),
+          
+          )
         ),
-        child:  Center(child: Coustumtext(text: '$bttext',textcolor: Colors.white,textsize: textsize,))
       ),
     );
   }

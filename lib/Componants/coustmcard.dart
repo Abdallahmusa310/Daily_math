@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class Cards extends StatelessWidget {
-    Cards({super.key,required this.cardcolorborder,this.dayname,this.groubsnum,this.rootname,this.numperofgroups,this.text});
+    Cards({super.key
+    ,required this.cardcolorborder,
+    this.dayname,this.groubsnum,
+    this.rootname,
+    this.numperofgroups,this.text});
    String?rootname;
    Color  cardcolorborder;
    String? dayname;
@@ -33,9 +37,7 @@ class Cards extends StatelessWidget {
               ),
               subtitle:Text(
                  '$numperofgroups groups') ,
-              trailing: Addtext(
-                routname: '$rootname',
-              ) ,
+              trailing:Addtext(routname: '$rootname')
             )
           ],
         ),

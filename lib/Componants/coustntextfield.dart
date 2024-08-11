@@ -1,13 +1,23 @@
 // ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 class Coustmtextfield extends StatelessWidget {
-   Coustmtextfield({super.key,this.hintText,this.maxsize,});
+  Coustmtextfield({super.key,this.hintText,this.maxsize, this.onSaved,});
   String? hintText;
   int? maxsize;
+  final void Function(String?)? onSaved;
    TextEditingController studentgradee=TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return  TextField(
+    return  TextFormField(
+      onSaved: onSaved ,
+      validator: (data){
+        if(data?.isEmpty??true){
+          return 'feild is requird';
+        }else{
+          return null;
+        }
+      },
       controller: studentgradee,
       decoration: InputDecoration(
         hintText: '$hintText',

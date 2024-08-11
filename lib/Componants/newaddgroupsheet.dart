@@ -1,4 +1,6 @@
 
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:daily_math/Componants/addnewcontainer.dart';
 import 'package:daily_math/models/student_model.dart';
 import 'package:flutter/material.dart';

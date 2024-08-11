@@ -18,7 +18,7 @@ class CardmodelAdapter extends TypeAdapter<Cardmodel> {
     };
     return Cardmodel(
       groupname: fields[0] as String,
-      groupgrade: fields[1]as String,
+      groupgrade:fields[1]as String,
       grouptime: fields[2] as String
     );
   }
