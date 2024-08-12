@@ -11,6 +11,7 @@ import 'package:daily_math/Views/homeview.dart';
 import 'package:daily_math/Views/monday.dart';
 import 'package:daily_math/Views/sunday.dart';
 import 'package:daily_math/models/card_model.dart';
+import 'package:daily_math/models/student_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
@@ -19,6 +20,7 @@ void main() async {
   await Hive.initFlutter();
   await Hive.openBox(kgroupbox);
   Hive.registerAdapter(CardmodelAdapter());
+  Hive.registerAdapter(StudentmodelAdapter());
 }
 
 class Dailymath extends StatelessWidget {

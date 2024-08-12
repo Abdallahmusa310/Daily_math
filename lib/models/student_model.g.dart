@@ -1,33 +1,29 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'card_model.dart';
+part of 'student_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class CardmodelAdapter extends TypeAdapter<Cardmodel> {
+class StudentmodelAdapter extends TypeAdapter<Studentmodel> {
   @override
-  final int typeId = 0;
+  final int typeId = 1;
 
   @override
-  Cardmodel read(BinaryReader reader) {
+  Studentmodel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Cardmodel(
-      groupname: fields[0]as String,
-      groupgrade: fields[1]as String,
-      grouptime: fields[2]as String,
-      
-      
-      
+    return Studentmodel(
+      studentname: fields[0],
+      parentrhone: fields[1]
     );
   }
 
   @override
-  void write(BinaryWriter writer, Cardmodel obj) {
+  void write(BinaryWriter writer, Studentmodel obj) {
     writer.writeByte(0);
   }
 
@@ -37,7 +33,7 @@ class CardmodelAdapter extends TypeAdapter<Cardmodel> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is CardmodelAdapter &&
+      other is StudentmodelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }
