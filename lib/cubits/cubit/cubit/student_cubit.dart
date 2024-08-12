@@ -9,12 +9,11 @@ part 'student_state.dart';
 
 class StudentCubit extends Cubit<StudentState> {
   StudentCubit() : super(StudentInitial());
-
   addstudent(Studentmodel student)async{
     emit(Studentloading());
     try {
   var studentbox=Hive.box(kgroupbox);
-  Studentsucsses();
+ emit(Studentsucsses());
   await  studentbox.add(student);
 } catch (e) {
   Studentfaield(e.toString());

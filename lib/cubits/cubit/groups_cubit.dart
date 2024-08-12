@@ -11,6 +11,7 @@ part 'groups_state.dart';
 class GroupsCubit extends Cubit<GroupsState> {
   GroupsCubit() : super(GroupsInitial());
   addgroup(Cardmodel group) async{
+    emit(Groupsloading());
      try {
   var groupbox=Hive.box(kgroupbox);
   emit(Groupssucsses());
