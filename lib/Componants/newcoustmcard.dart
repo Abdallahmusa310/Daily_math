@@ -29,7 +29,7 @@ class Newcards extends StatelessWidget {
         child: GestureDetector(
           onTap: (){
             showModalBottomSheet(context: context, builder: (context){
-            return const Newaddgroubsheet();});},
+            return const  Newaddgroubsheet();});},
           child: Column(
             children: [
               ListTile(

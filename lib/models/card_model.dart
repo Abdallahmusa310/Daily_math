@@ -2,7 +2,7 @@ import 'package:hive/hive.dart';
 part 'card_model.g.dart';
 
 @HiveType(typeId: 0)
-class Cardmodel extends HiveObject {
+class Cardmodel {
 
   @HiveType(typeId: 0)
   final String groupname;

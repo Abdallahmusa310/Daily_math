@@ -1,8 +1,9 @@
+// ignore_for_file: avoid_print
+
 import 'package:daily_math/Componants/form_sheet_one.dart';
 import 'package:daily_math/cubits/cubit/groups_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
 class Addgroubsheet extends StatefulWidget {
 const  Addgroubsheet({super.key});
@@ -17,16 +18,11 @@ class _AddgroubsheetState extends State<Addgroubsheet> {
     return BlocConsumer<GroupsCubit, GroupsState>(
       listener: (context, state) {
         if (state is Groupsfaield) {
-          print('Failed ${state.errormassage}');
+        print('Failed ${state.errormassage}');
         }
       },
       builder: (context, state) {
-        return ModalProgressHUD(
-          inAsyncCall: state is Groupsloading ? true : false ,
-          child: const Creategroupsheet()
-          
-          
-          );
+        return const Creategroupsheet();
       },
     );
   }

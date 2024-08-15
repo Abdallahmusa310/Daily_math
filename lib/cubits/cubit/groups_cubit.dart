@@ -14,10 +14,10 @@ class GroupsCubit extends Cubit<GroupsState> {
     emit(Groupsloading());
      try {
   var groupbox=Hive.box(kgroupbox);
-  emit(Groupssucsses());
     await  groupbox.add(group);
+    emit(Groupssucsses());
 }  catch (e) {
-  Groupsfaield(e.toString());
+    emit(Groupsfaield(e.toString())); 
 
   
 }

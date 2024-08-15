@@ -11,7 +11,7 @@ class Coustmtextfield extends StatelessWidget {
   Widget build(BuildContext context) {
     return  TextFormField(
       onSaved: onSaved ,
-      validator: (data){
+      validator:(data){
         if(data?.isEmpty??true){
           return 'feild is requird';
         }else{

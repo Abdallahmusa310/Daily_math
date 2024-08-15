@@ -17,11 +17,9 @@ class CardmodelAdapter extends TypeAdapter<Cardmodel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Cardmodel(
-      groupname: fields[0]as String,
-      groupgrade: fields[1]as String,
-      grouptime: fields[2]as String,
-      
-      
+      groupname: fields[0] as String,
+      groupgrade: fields[1] as String,
+      grouptime: fields[2] as String
       
     );
   }

@@ -3,7 +3,7 @@ part 'student_model.g.dart';
 
 
 @HiveType(typeId: 1)
-class Studentmodel
+class Studentmodel extends HiveObject
  {
     @HiveType(typeId: 0)
   final String studentname;

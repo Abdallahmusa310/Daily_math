@@ -1,37 +1,40 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'student_model.dart';
+part of 'groups_model.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class StudentmodelAdapter extends TypeAdapter<Studentmodel> {
+class GroupModelAdapter extends TypeAdapter<GroupModel> {
   @override
-  final int typeId = 1;
+  final int typeId = 2;
 
   @override
-  Studentmodel read(BinaryReader reader) {
+  GroupModel read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Studentmodel(
-      studentname: fields[0] as String,
-      parentrhone: fields[1] as String,
-      
+    return GroupModel(
+      nameofgruop:fields[0] as String,
+      gradeofgroup:fields[1] as String,
+      starttimeofgroup:fields[2] as String
     );
   }
+
   @override
-  void write(BinaryWriter writer, Studentmodel obj) {
+  void write(BinaryWriter writer, GroupModel obj) {
     writer.writeByte(0);
   }
+
   @override
   int get hashCode => typeId.hashCode;
+
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is StudentmodelAdapter &&
+      other is GroupModelAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

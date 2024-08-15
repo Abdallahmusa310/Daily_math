@@ -1,11 +1,9 @@
 // ignore_for_file: non_constant_identifier_names, file_names
-
 import 'package:daily_math/Componants/addnewcontainer.dart';
 import 'package:daily_math/cubits/cubit/cubit/student_cubit.dart';
 import 'package:daily_math/models/student_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Newaddgroubsheet extends StatefulWidget {
@@ -17,77 +15,79 @@ class Newaddgroubsheet extends StatefulWidget {
 }
 
 class _NewaddgroubsheetState extends State<Newaddgroubsheet> {
+  final GlobalKey<FormState> formkey = GlobalKey();
   TextEditingController studentnamee = TextEditingController();
   TextEditingController parentphone = TextEditingController();
   List<Studentmodel> Studentss = List.empty(growable: true);
   int selctedindex = -1;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(32),
-      child: Expanded(
-        child: BlocConsumer<StudentCubit, StudentState>(
-          listener: (context, state) {
-            if (state is Studentfaield) {
-          print('Failed ${state.errormassage}');
-        }
-          },
-          builder: (context, state) {
-          return  ModalProgressHUD( 
-          inAsyncCall:state is Studentloading ? true : false ,
-            child: Column(children: [
-              CloseButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-              ),
-              TextField(
-                controller: studentnamee,
-                decoration: InputDecoration(
-                  hintText: 'student name',
-                  border: createborder(),
-                  enabledBorder: createborder(),
+    return BlocProvider(
+      create: (context) => StudentCubit(),
+      child: Padding(
+        padding: const EdgeInsets.all(32),
+        child: Expanded(
+          child: BlocListener<StudentCubit, StudentState>(
+            listener: (context, state) {
+              if (state is Studentfaield){
+                print('Failed ${state.errormassage}');
+              }
+            },
+              child:  Column(children: [
+                CloseButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
-              ),
-              const SizedBox(
-                height: 28,
-              ),
-              TextField(
-                controller: parentphone,
-                decoration: InputDecoration(
-                  hintText: 'parent phone',
-                  border: createborder(),
-                  enabledBorder: createborder(),
+                TextField(
+                  controller: studentnamee,
+                  decoration: InputDecoration(
+                    hintText: 'student name',
+                    border: createborder(),
+                    enabledBorder: createborder(),
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 28,
-              ),
-              GestureDetector(
-                onTap: () {
-                  String phone = parentphone.text.trim();
-                  String name = studentnamee.text.trim();
-                  if (name.isNotEmpty && phone.isNotEmpty) {
-                    setState(() {
-                      Studentss.add(
-                          Studentmodel(studentname: name, parentrhone: phone));
-                    });
-                  }
-                },
-                child: const Newcontainer(),
-              ),
-              Studentss.isEmpty
-                  ? const Text('no students yet')
-                  : Expanded(
-                      child: ListView.builder(
-                          physics: const BouncingScrollPhysics(),
-                          itemCount: Studentss.length,
-                          itemBuilder: (context, index) => getrow(index)),
-                    )
-            ]))
+                const SizedBox(
+                  height: 28,
+                ),
+                TextField(
+                  controller: parentphone,
+                  decoration: InputDecoration(
+                    hintText: 'parent phone',
+                    border: createborder(),
+                    enabledBorder: createborder(),
+                  ),
+                ),
+                const SizedBox(
+                  height: 28,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    String phone = parentphone.text.trim();
+                    String name = studentnamee.text.trim();
+                    if (name.isNotEmpty && phone.isNotEmpty) {
+                      BlocProvider.of<StudentCubit>(context).addstudent(
+                          Studentmodel(
+                              studentname: name, parentrhone: phone));
+                      setState(() {
+                        Studentss.add(Studentmodel(
+                            studentname: name, parentrhone: phone));
+                      });
+                    }
+                  },
+                  child: const Newcontainer(),
+                ),
+                Studentss.isEmpty
+                    ? const Text('no students yet')
+                    : Expanded(
+                        child: ListView.builder(
+                            physics: const BouncingScrollPhysics(),
+                            itemCount: Studentss.length,
+                            itemBuilder: (context, index) => getrow(index)),
+                     )
+              ])
             
-            ;
-          },
+          ),
         ),
       ),
     );
