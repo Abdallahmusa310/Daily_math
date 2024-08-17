@@ -10,6 +10,8 @@ import 'package:daily_math/Views/daysmenuview.dart';
 import 'package:daily_math/Views/homeview.dart';
 import 'package:daily_math/Views/monday.dart';
 import 'package:daily_math/Views/sunday.dart';
+import 'package:daily_math/cubits/cubit/cubit/listofstudents_cubit.dart';
+import 'package:daily_math/cubits/cubit/listofgruops_cubit.dart';
 import 'package:daily_math/models/groups_model.dart';
 import 'package:daily_math/models/student_model.dart';
 import 'package:daily_math/simple_bloc_observer.dart';
@@ -25,31 +27,38 @@ void main() async {
   Hive.registerAdapter(GroupModelAdapter());
   await Hive.openBox<GroupModel>(kgroupbox);
   await Hive.openBox<Studentmodel>(kgroupbox);
-  
 }
-
 class Dailymath extends StatelessWidget {
   const Dailymath({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      debugShowCheckedModeBanner:false,
-      theme: ThemeData.light(),
-      routes:{
-      'Homeview'   :(context) => const Homeview(),
-      'Groubday'   :(context) => const Daysmenu(),
-      'Settingview':(context) => const Settingview(),
-      'Navbar'     :(context) => const  Navbar(),
-      'Saturday'   :(context) => const Saturday(),
-      'Friday'     :(context) => const Friday(),
-      'Sunday'     :(context) => const Sunday(),
-      'Monday'     :(context) => const Monday(),
-      'Tuesday'    :(context) => const Tuesday(),
-      'Wednesday'  :(context) => const Wednesday(),
-      'Thursday'   :(context) => const Thursday(),
-      },
-      initialRoute: 'Navbar',
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => ListofstudentsCubit(),
+        ),
+        BlocProvider(
+          create: (context)=>ListofgruopsCubit(),
+        )
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner:false,
+        theme: ThemeData.light(),
+        routes:{
+        'Homeview'   :(context) => const Homeview(),
+        'Groubday'   :(context) => const Daysmenu(),
+        'Settingview':(context) => const Settingview(),
+        'Navbar'     :(context) => const  Navbar(),
+        'Saturday'   :(context) => const Saturday(),
+        'Friday'     :(context) => const Friday(),
+        'Sunday'     :(context) => const Sunday(),
+        'Monday'     :(context) => const Monday(),
+        'Tuesday'    :(context) => const Tuesday(),
+        'Wednesday'  :(context) => const Wednesday(),
+        'Thursday'   :(context) => const Thursday(),
+        },
+        initialRoute: 'Navbar',
+      ),
     );
   }
 }

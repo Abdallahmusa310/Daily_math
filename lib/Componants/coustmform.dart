@@ -62,18 +62,24 @@ class _CoustmformState extends State<Coustmform> {
                 ),
               ),
                 const SizedBox(height: 30),
-                Addbt(
-                  bttext: 'create group',
-                  ontab: () {
-                    if (keyform.currentState!.validate()){
-                      keyform.currentState!.save();
-                      var groupmpdel=
-                    GroupModel(nameofgruop: title!, gradeofgroup: suptitle!, starttimeofgroup: stime!);
-                    BlocProvider.of<GroupcubtCubit>(context).addgroup(groupmpdel);
-                    } else {
-                      autovalidateMode = AutovalidateMode.always;
-                      setState(() {});
-                    }
+                BlocBuilder<GroupcubtCubit, GroupcubtState>(
+                  builder: (context, state) {
+                    return Addbt(
+                      isload: state is Groupload ? true : false,             
+                                  bttext: 'create group',
+                                  ontab: () {
+                                    if (keyform.currentState!.validate()){
+                                      keyform.currentState!.save();
+                                      var groupmpdel=
+                                    GroupModel(nameofgruop:title??"a", gradeofgroup: suptitle??'a', starttimeofgroup:stime?? 'aaa');
+                                    BlocProvider.of<GroupcubtCubit>(context).addgroup(groupmpdel);
+                                    initState();
+                                    } else {
+                                      autovalidateMode = AutovalidateMode.always;
+                                      setState(() {});
+                                    }
+                                  },
+                                );
                   },
                 )
               ]),

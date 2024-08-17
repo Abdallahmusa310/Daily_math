@@ -3,10 +3,11 @@
 import 'package:daily_math/Componants/widgets.dart';
 import 'package:flutter/material.dart';
 
-class Addbt extends StatelessWidget {
-   Addbt({super.key,this.bttext,this.textsize,this.ontab,this.height,wiidth});
+class Addbt extends StatelessWidget{
+   Addbt({super.key,this.bttext,this.textsize,this.ontab,this.height,wiidth,this.isload=false});
   String?bttext;
   double? textsize,width,height;
+  bool isload;
   void Function()?ontab;
   
 
@@ -17,6 +18,7 @@ class Addbt extends StatelessWidget {
       child:  GestureDetector(
         onTap: ontab,
         child: Container(
+
           height: 40,
           width: 110,
           decoration: BoxDecoration(
@@ -40,8 +42,8 @@ class Addbt extends StatelessWidget {
              
             
           ),
-          child: Center(child: 
-          Coustumtext(text: '$bttext',textcolor: Colors.white,textsize: textsize,),
+          child: Center(child: isload ? const CircularProgressIndicator(color: Colors.white,strokeWidth: 2,):
+          Coustumtext(text: '$bttext',textcolor: Colors.white,textsize: textsize,)
           
           )
         ),

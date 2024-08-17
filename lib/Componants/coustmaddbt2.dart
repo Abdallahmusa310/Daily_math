@@ -34,7 +34,9 @@ class Newaddbt extends StatelessWidget {
       child:
       Center(child: IconButton(onPressed:
        (){   
-        showModalBottomSheet(context: context, builder: (context){
+        showModalBottomSheet(
+          isScrollControlled: true,
+          context: context, builder: (context){
                 return const Newaddgroubsheet();}) ;
        
         

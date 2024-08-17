@@ -12,7 +12,10 @@ class Elvatedbt extends StatelessWidget {
         child: Addbt(textsize: 14,bttext: 'Create group',),
 
       onTap:(){
-        showModalBottomSheet(context: context, builder: (context){
+        showModalBottomSheet(
+          isScrollControlled: true,
+  
+          context: context, builder: (context){
            return const MyWidget();
       } ,
       );

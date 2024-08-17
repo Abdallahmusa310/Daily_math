@@ -10,7 +10,6 @@ class MyWidget extends StatefulWidget {
   @override
   State<MyWidget> createState() => _MyWidgetState();
 }
-
 class _MyWidgetState extends State<MyWidget> {
   String? title, suptitle, stime;
   bool isload = false;
@@ -18,18 +17,28 @@ class _MyWidgetState extends State<MyWidget> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => GroupcubtCubit(),
-      child: SingleChildScrollView(
-        child: BlocListener<GroupcubtCubit, GroupcubtState>(
-          listener: (context, state) {
-            if (state is Groupfaieldd) {
-              print('faild ${state.errormassage}');
-            }
-            if (state is Groupsucssesd) {
-              Navigator.pop(context);
-            }
-          },
-          child:const Coustmform()
-          
+      child: Padding(
+        padding: EdgeInsets.only(
+          left: 16,
+          right: 16,
+          bottom: MediaQuery.of(context).viewInsets.bottom
+        ),
+        child: AbsorbPointer(
+          absorbing: State is Groupload ? true :false,
+          child: SingleChildScrollView(
+            child: BlocListener<GroupcubtCubit, GroupcubtState>(
+              listener: (context, state) {
+                if (state is Groupfaieldd) {
+                  print('faild ${state.errormassage}');
+                }
+                if (state is Groupsucssesd) {
+                  Navigator.pop(context);
+                }
+              },
+              child:const Coustmform()
+              
+            ),
+          ),
         ),
       ),
     );

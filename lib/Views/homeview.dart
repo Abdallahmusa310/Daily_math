@@ -17,7 +17,7 @@ class Homeview extends StatelessWidget {
         child: Column(
           children: [
           CoustmAppbar(),
-          Expanded(child: Listofdays()),
+          Expanded(child:Listofdays()),
           ],
         ),
       ),
